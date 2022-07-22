@@ -12,6 +12,9 @@ see also https://github.com/riscv/riscv-v-spec/releases/tag/0.7.1
 versus
 https://github.com/riscv/riscv-v-spec/releases/tag/0.8
 
+The makefile defines the location of AS, CC, LD and I compiled those for 0.7.1 through
+https://github.com/brucehoult/riscv-gnu-toolchain
+
 ## RISC-V Vector Assembly Code Examples
 
 These example use RISC-V "V" vector instructions (now version 0.7.1).
@@ -30,11 +33,5 @@ These example use RISC-V "V" vector instructions (now version 0.7.1).
   [`memcmp()`](https://manpath.be/c8/3/memcmp) libc function
 - rawmemchr.s - vector version of the well-known
   [`rawmemchr()`](https://manpath.be/c8/3/rawmemchr) glibc function
-
-### See Also
-
-The RISC-V "V" extension specification contains several
-vector assembly code example, e.g. [vector versions of `memcpy()`,
-`strcpy()`, `strncpy()` and `strlen()`](https://github.com/gsauthof/riscv-v-spec/tree/example-files/example).
 
 ## Other Examples
