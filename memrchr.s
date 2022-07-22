@@ -20,7 +20,7 @@ memrchr:
 
     # since there is no vlast.m, we have to use vfirst.m and post-process
 
-    vfirst.m a4, v0          # find lowest index of set mask bit
+    vmfirst.m a4, v0          # find lowest index of set mask bit
     bgez a4, .Lmatch         # branch if greater-than-or-equal-to-zero
     sub a2, a2, a3           # decrement n
     bnez a2, .Loop           # branch if not-equal to zero, i.e. continue loop
@@ -44,7 +44,7 @@ memrchr:
     vsetvli t0, a6, e8, m8   # ignore tailing bytes in the high_part
 
     vmseq.vx v24, v16, a1    # check for matches in the high part
-    vfirst.m a4, v24         # store index of first match
+    vmfirst.m a4, v24         # store index of first match
 
     vsetvli a3, a5, e8, m8   # update config for lower part, in case we branch
     bltz a4, .Loop2          # branch if less-than-zero

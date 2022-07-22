@@ -15,7 +15,7 @@ memcmp:
     vlb.v v8,  (a0)            # load a3 bytes from u
     vlb.v v16, (a1)            # load a3 bytes from v
     vmsne.vv v0, v8, v16       # set mask bit if elements are not equal
-    vfirst.m a4, v0            # find lowest index of set mask bit
+    vmfirst.m a4, v0            # find lowest index of set mask bit
     bgez a4, 1f                # branch if greater-or-equal to zero
     add a0, a0, a3             # increment u
     add a1, a1, a3             # increment v

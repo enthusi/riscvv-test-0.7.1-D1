@@ -20,7 +20,7 @@ strlen:
     csrr a2, vl               # adjust a2 in case there was a fault
 
     vmseq.vi v0, v8, 0        # set mask bit if equal to immediate 0
-    vfirst.m a3, v0           # find lowest index of set mask bit
+    vmfirst.m a3, v0           # find lowest index of set mask bit
 
     add a0, a0, a2            # increment src in case there was no match
     bltz a3, .Loop            # branch if less-than-zero

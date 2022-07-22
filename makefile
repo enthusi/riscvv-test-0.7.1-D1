@@ -2,9 +2,9 @@
 
 ASFLAGS = -march=rv64gcv
 
-AS = riscv64-unknown-elf-as
-CC = riscv64-unknown-elf-gcc
-LD = riscv64-unknown-elf-ld
+AS = /opt/rvv_071/bin/riscv64-unknown-elf-as
+CC = /opt/rvv_071/bin/riscv64-unknown-elf-gcc
+LD = /opt/rvv_071/bin/riscv64-unknown-elf-ld
 
 CFLAGSW_GCC = -Wall -Wextra -Wno-missing-field-initializers \
     -Wno-parentheses -Wno-missing-braces \
@@ -18,7 +18,7 @@ CFLAGS = $(CFLAGSW_GCC) $(CFLAGS0) $(CFLAGS1)
 
 
 .PHONY: all
-all: bcd2a bcd2asc a2bcd memchr memrchr memcmp strlen strlen_small
+all: bcd2a bcd2asc a2bcd memchr memrchr memcmp 
 
 
 bcd2a: bcd2ascii.o start_bcd2a.o 
@@ -52,15 +52,15 @@ memcmp: main_memcmp.o memcmp.o
 
 TEMP += memcmp main_memcmp.o memcmp.o
 
-strlen: main_strlen.o rawmemchr.o strlen.o
-	$(CC) $(LDFLAGS) $^ -o $@
+#strlen: main_strlen.o rawmemchr.o strlen.o
+#	$(CC) $(LDFLAGS) $^ -o $@
 
-TEMP += strlen main_strlen.o rawmemchr.o strlen.o
+#TEMP += strlen main_strlen.o rawmemchr.o strlen.o
 
-strlen_small: main_strlen.o rawmemchr.o strlen_small.o
-	$(CC) $(LDFLAGS) $^ -o $@
+#strlen_small: main_strlen.o rawmemchr.o strlen_small.o
+#	$(CC) $(LDFLAGS) $^ -o $@
 
-TEMP += strlen_small strlen_small.o
+#TEMP += strlen_small strlen_small.o
 
 .PHONY: clean
 clean:

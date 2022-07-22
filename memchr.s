@@ -14,7 +14,7 @@ memchr:
                               # i.e. 4 groups of 8 registers
     vlb.v v8, (a0)            # load a3 bytes
     vmseq.vx v0, v8, a1       # set mask bit if equal to scalar c
-    vfirst.m a4, v0           # find lowest index of set mask bit
+    vmfirst.m a4, v0           # find lowest index of set mask bit
     bgez a4, 1f               # branch if greater-or-equal to zero
     add a0, a0, a3            # increment src
     sub a2, a2, a3            # decrement n
