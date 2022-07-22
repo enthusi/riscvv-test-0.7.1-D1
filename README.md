@@ -4,7 +4,7 @@ by Georg Sauthoff
 
 Different here:
 patches to be compatible with RISC-V "V" vector instructions in version 0.7.1
-as implemented in the D1 CPU (used in Nezra or DevTerm R01 board)
+as implemented in the XuanTie C906 D1 SOC (used in Nezha or DevTerm R01 board)
 
 Patches are mostly due to the change in 
 `vfirst.m` to `vmfirst.m`
