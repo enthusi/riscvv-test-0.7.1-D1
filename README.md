@@ -34,4 +34,3 @@ These example use RISC-V "V" vector instructions (now version 0.7.1).
 - rawmemchr.s - vector version of the well-known
   [`rawmemchr()`](https://manpath.be/c8/3/rawmemchr) glibc function
 
-## Other Examples
